@@ -14,8 +14,9 @@ jobs:
         - name: Checkout repository
           uses: actions/checkout@v3
 
-        - name: Make scripts executable
-          run: chmod +x download.sh buildall.sh
+        - name: Make all shell scripts executable
+          run: |
+            find . -type f -name "*.sh" -exec chmod +x {} \;
     
         - name: Downloading Dependencies
           run: ./download.sh
