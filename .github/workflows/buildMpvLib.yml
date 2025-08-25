@@ -24,21 +24,9 @@ jobs:
         - name: Build mpv for ARM64
           run: ./buildall.sh --arch arm64 mpv
 
-        - name: Build mpv for x86
-          run: ./buildall.sh --arch x86 mpv
-
-        - name: Build mpv for x86_64
-          run: ./buildall.sh --arch x86_64 mpv
-
-        - name: Build mpv for armv7l
-          run: ./buildall.sh --arch armv7l mpv
-
         - name: Upload artifacts
           uses: actions/upload-artifact@v4
           with:
             name: mpv-libs
             path: |
               prefix/arm64
-              prefix/x86
-              prefix/x86_64
-              prefix/armv7l
